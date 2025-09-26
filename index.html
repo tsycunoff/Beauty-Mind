@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Motor Mind - Сервис отзывов и возврата клиентов для автосервисов</title>
-    <meta name="description" content="Motor Mind - автоматизированный сервис на базе WhatsApp для сбора отзывов, перехвата негатива и возврата клиентов в автосервисах. Повысьте рейтинг и увеличьте прибыль.">
-    <meta name="keywords" content="автосервис, отзывы, WhatsApp, управление репутацией, возврат клиентов, автоматизация">
+    <title>Beauty Mind - Платформа отзывов и возврата клиенток для салонов красоты</title>
+    <meta name="description" content="Beauty Mind - автоматизированная платформа на базе WhatsApp для сбора отзывов, перехвата негатива и возврата клиенток в салонах красоты. Повысьте рейтинг и увеличьте прибыль.">
+    <meta name="keywords" content="салон красоты, отзывы, WhatsApp, управление репутацией, возврат клиентов, автоматизация, маникюр, косметология">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,91 +18,91 @@
               sans: ['Inter', 'sans-serif'],
             },
             colors: {
-              border: 'hsl(214.3 31.8% 91.4%)',
-              input: 'hsl(214.3 31.8% 91.4%)',
-              ring: 'hsl(215 20.2% 65.1%)',
-              background: 'hsl(0 0% 100%)',
-              foreground: 'hsl(222.2 84% 4.9%)',
+              border: 'rgba(244, 140, 167, 0.2)',
+              input: 'rgba(244, 140, 167, 0.2)',
+              ring: 'rgba(244, 140, 167, 0.5)',
+              background: '#FFF8F5',
+              foreground: '#6B5E58',
               primary: {
-                DEFAULT: '#0D2C54', // Brand Dark Blue
-                foreground: 'hsl(210 40% 98%)',
-                50: '#eff6ff',
-                100: '#dbeafe',
-                200: '#bfdbfe',
-                300: '#93c5fd',
-                400: '#60a5fa',
-                500: '#3b82f6',
-                600: '#0D2C54',
-                700: '#0A2347',
-                800: '#071B3A',
-                900: '#05132D',
+                DEFAULT: '#F48CA7', // Новый основной розовый
+                foreground: '#FFFFFF',
+                50: '#FFF8F5',
+                100: '#F7D8E1',
+                200: '#F48CA7',
+                300: '#E06B89',
+                400: '#CC4A6B',
+                500: '#C5536C',
+                600: '#B8294D',
+                700: '#A1253E',
+                800: '#8A212F',
+                900: '#731D20',
               },
-              'primary-card': '#183A68', // Lighter blue for cards on dark bg
+              'primary-card': '#C5536C', // Темнее для карточек
               secondary: {
-                DEFAULT: 'hsl(210 40% 98%)', // Lighter background
-                foreground: 'hsl(222.2 47.4% 11.2%)',
+                DEFAULT: '#F7D8E1', // Нежно-розовый фон
+                foreground: '#6B5E58',
               },
               destructive: {
                 DEFAULT: 'hsl(0 100% 50%)',
-                foreground: 'hsl(210 40% 98%)',
+                foreground: '#FFFFFF',
               },
               muted: {
-                DEFAULT: 'hsl(210 40% 96.1%)',
-                foreground: 'hsl(215.4 16.3% 46.9%)',
+                DEFAULT: '#EECFAE', // Бежево-золотистый
+                foreground: 'rgba(107, 94, 88, 0.7)',
               },
               accent: {
-                DEFAULT: '#FFD100', // Brand Yellow
-                foreground: '#0D2C54', // Brand Dark Blue for text on yellow
-                dark: '#E6B800', // Darker yellow for button press effect
-                light: '#FFF347', // Lighter yellow for hover
-                50: '#fffbeb',
-                100: '#fef3c7',
-                200: '#fde68a',
-                300: '#fcd34d',
-                400: '#FFD100',
-                500: '#f59e0b',
-                600: '#d97706',
-                700: '#b45309',
-                800: '#92400e',
-                900: '#78350f',
+                DEFAULT: '#F48CA7', // Основной розовый
+                foreground: '#FFFFFF',
+                dark: '#C5536C', // Для эффекта нажатия
+                light: '#E06B89', // Для hover
+                50: '#FFF8F5',
+                100: '#F7D8E1',
+                200: '#F48CA7',
+                300: '#E06B89',
+                400: '#CC4A6B',
+                500: '#C5536C',
+                600: '#B8294D',
+                700: '#A1253E',
+                800: '#8A212F',
+                900: '#731D20',
               },
               'secondary-accent': {
-                DEFAULT: '#22d3ee', // cyan-400
-                foreground: '#0D2C54',
+                DEFAULT: '#EECFAE', // Бежево-золотистый
+                foreground: '#6B5E58',
               },
               success: {
-                DEFAULT: '#10b981', // emerald-500
-                foreground: 'hsl(210 40% 98%)',
-                light: '#34d399',
-                dark: '#059669',
+                DEFAULT: '#4CAF50',
+                foreground: '#FFFFFF',
+                light: '#81C784',
+                dark: '#388E3C',
               },
               warning: {
-                DEFAULT: '#f97316', // orange-500
-                foreground: 'hsl(210 40% 98%)',
+                DEFAULT: '#FF9800',
+                foreground: '#FFFFFF',
               },
               info: {
-                DEFAULT: '#0ea5e9', // sky-500
-                foreground: 'hsl(210 40% 98%)',
+                DEFAULT: '#2196F3',
+                foreground: '#FFFFFF',
               },
               popover: {
-                DEFAULT: 'hsl(0 0% 100%)',
-                foreground: 'hsl(222.2 84% 4.9%)',
+                DEFAULT: '#FFF8F5',
+                foreground: '#6B5E58',
               },
               card: {
-                DEFAULT: 'hsl(0 0% 100%)',
-                foreground: 'hsl(222.2 84% 4.9%)',
+                DEFAULT: '#FFFFFF',
+                foreground: '#6B5E58',
               },
               gradient: {
-                'primary-start': '#0D2C54',
-                'primary-end': '#183A68',
-                'accent-start': '#FFD100',
-                'accent-end': '#FFF347',
+                'primary-start': '#F48CA7',
+                'primary-end': '#C5536C',
+                'accent-start': '#F48CA7',
+                'accent-end': '#E06B89',
               }
             },
             backgroundImage: {
-              'gradient-primary': 'linear-gradient(135deg, #0D2C54 0%, #183A68 100%)',
-              'gradient-accent': 'linear-gradient(135deg, #FFD100 0%, #FFF347 100%)',
-              'gradient-hero': 'linear-gradient(135deg, #0D2C54 0%, #183A68 50%, #0D2C54 100%)',
+              'gradient-primary': 'linear-gradient(135deg, #F48CA7 0%, #C5536C 100%)',
+              'gradient-accent': 'linear-gradient(135deg, #F48CA7 0%, #E06B89 100%)',
+              'gradient-hero': 'linear-gradient(135deg, #FFF8F5 0%, #F7D8E1 100%)',
               'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
             },
             borderRadius: {
@@ -111,9 +111,9 @@
               sm: `calc(0.75rem - 4px)`,
             },
             boxShadow: {
-              'glow': '0 0 20px rgba(255, 209, 0, 0.3)',
-              'glow-primary': '0 0 30px rgba(13, 44, 84, 0.2)',
-              'inner-glow': 'inset 0 2px 4px 0 rgba(255, 209, 0, 0.1)',
+              'glow': '0 0 20px rgba(244, 140, 167, 0.3)',
+              'glow-primary': '0 0 30px rgba(244, 140, 167, 0.2)',
+              'inner-glow': 'inset 0 2px 4px 0 rgba(244, 140, 167, 0.1)',
             },
             animation: {
               'accordion-down': 'accordion-down 0.2s ease-out',
@@ -161,8 +161,8 @@
                 '50%': { transform: 'translateY(-10px)' },
               },
               'pulse-glow': {
-                '0%, 100%': { boxShadow: '0 0 20px rgba(255, 209, 0, 0.3)' },
-                '50%': { boxShadow: '0 0 40px rgba(255, 209, 0, 0.6)' },
+                '0%, 100%': { boxShadow: '0 0 20px rgba(244, 140, 167, 0.3)' },
+                '50%': { boxShadow: '0 0 40px rgba(244, 140, 167, 0.6)' },
               },
               'float': {
                 '0%, 100%': { transform: 'translateY(0px)' },

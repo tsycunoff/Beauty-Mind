@@ -1,8 +1,26 @@
 import React from 'react';
-import { LogoIcon } from './icons';
 
-const Footer: React.FC = () => {
-  const scrollToSection = (href: string) => {
+// Beauty Mind Logo
+const BeautyMindLogo = ({ className }) => (
+  <svg className={className} viewBox="0 0 100 100" fill="currentColor">
+    {/* Стилизованное лицо в профиль (бежевый) */}
+    <path 
+      d="M20 75 C20 60, 30 45, 50 45 C70 45, 80 60, 80 75 L75 80 C75 65, 65 50, 50 50 C35 50, 25 65, 25 80 Z" 
+      fill="#EECFAE"
+    />
+    {/* Мозг (розовая часть) */}
+    <path 
+      d="M25 30 C25 20, 35 10, 50 10 C65 10, 75 20, 75 30 C75 25, 70 20, 65 25 C70 30, 65 35, 60 30 C65 40, 55 45, 50 40 C45 45, 35 40, 40 30 C35 35, 30 30, 35 25 C30 20, 25 25, 25 30 Z" 
+      fill="#F48CA7"
+    />
+    {/* Детали лица */}
+    <ellipse cx="65" cy="55" rx="2" ry="3" fill="#6B5E58" opacity="0.4"/>
+    <path d="M60 70 C62 72, 68 72, 70 70" stroke="#6B5E58" strokeWidth="1" fill="none" opacity="0.4"/>
+  </svg>
+);
+
+const Footer = () => {
+  const scrollToSection = (href) => {
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
       if (element) {
@@ -13,7 +31,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-white border-t border-slate-100 relative overflow-hidden">
+    <footer className="bg-white border-t border-[#F48CA7]/20 relative overflow-hidden">
       
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.01]">
@@ -34,52 +52,52 @@ const Footer: React.FC = () => {
           {/* Brand section - компактнее */}
           <div className="lg:col-span-5">
             <div className="flex items-center mb-6">
-              <LogoIcon className="h-8 w-auto mr-3 text-[#0D2C54]" />
+              <BeautyMindLogo className="h-8 w-auto mr-3 text-[#F48CA7]" />
               <span 
                 className="text-xl font-extrabold"
-                style={{ color: '#0D2C54' }}
+                style={{ color: '#F48CA7' }}
               >
-                Motor Mind
+                Beauty Mind
               </span>
             </div>
             
             {/* Улучшенное описание */}
-            <p className="text-slate-700 text-base leading-relaxed mb-8 max-w-md font-medium">
-              Автоматизируем работу с клиентами для автосервисов через WhatsApp.{' '}
+            <p className="text-[#6B5E58]/80 text-base leading-relaxed mb-8 max-w-md font-medium">
+              Автоматизируем работу с клиентками для салонов красоты через WhatsApp.{' '}
               <span 
                 className="font-semibold"
-                style={{ color: '#0D2C54' }}
+                style={{ color: '#F48CA7' }}
               >
-                Увеличиваем отзывы и возвращаем клиентов.
+                Увеличиваем отзывы и возвращаем клиенток.
               </span>
             </p>
             
             {/* Contact info - компактнее */}
             <div className="space-y-3">
               <a 
-                href="mailto:hello@motor-mind.ru" 
-                className="flex items-center gap-3 text-slate-700 hover:text-[#0D2C54] transition-colors duration-300"
+                href="mailto:hello@beauty-mind.ru" 
+                className="flex items-center gap-3 text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300"
               >
                 <div 
                   className="w-7 h-7 rounded-lg flex items-center justify-center"
-                  style={{ backgroundColor: 'rgba(13, 44, 84, 0.1)' }}
+                  style={{ backgroundColor: 'rgba(244, 140, 167, 0.1)' }}
                 >
-                  <svg className="w-3.5 h-3.5 text-[#0D2C54]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-3.5 h-3.5 text-[#F48CA7]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <span className="text-sm font-medium">hello@motor-mind.ru</span>
+                <span className="text-sm font-medium">hello@beauty-mind.ru</span>
               </a>
 
               <a 
                 href="tel:+79991234567" 
-                className="flex items-center gap-3 text-slate-700 hover:text-[#0D2C54] transition-colors duration-300"
+                className="flex items-center gap-3 text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300"
               >
                 <div 
                   className="w-7 h-7 rounded-lg flex items-center justify-center"
-                  style={{ backgroundColor: 'rgba(13, 44, 84, 0.1)' }}
+                  style={{ backgroundColor: 'rgba(244, 140, 167, 0.1)' }}
                 >
-                  <svg className="w-3.5 h-3.5 text-[#0D2C54]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-3.5 h-3.5 text-[#F48CA7]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
@@ -94,7 +112,7 @@ const Footer: React.FC = () => {
               
               {/* Product links */}
               <div>
-                <h3 className="text-xs font-bold text-[#0D2C54] uppercase tracking-wider mb-5">
+                <h3 className="text-xs font-bold text-[#F48CA7] uppercase tracking-wider mb-5">
                   Продукт
                 </h3>
                 <ul className="space-y-3">
@@ -102,7 +120,7 @@ const Footer: React.FC = () => {
                     <a
                       href="#solution"
                       onClick={(e) => { e.preventDefault(); scrollToSection('#solution'); }}
-                      className="text-sm text-slate-700 hover:text-[#0D2C54] transition-colors duration-300 font-medium"
+                      className="text-sm text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300 font-medium"
                     >
                       Решения
                     </a>
@@ -111,7 +129,7 @@ const Footer: React.FC = () => {
                     <a
                       href="#how-it-works"
                       onClick={(e) => { e.preventDefault(); scrollToSection('#how-it-works'); }}
-                      className="text-sm text-slate-700 hover:text-[#0D2C54] transition-colors duration-300 font-medium"
+                      className="text-sm text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300 font-medium"
                     >
                       Как работает
                     </a>
@@ -120,7 +138,7 @@ const Footer: React.FC = () => {
                     <a
                       href="#results"
                       onClick={(e) => { e.preventDefault(); scrollToSection('#results'); }}
-                      className="text-sm text-slate-700 hover:text-[#0D2C54] transition-colors duration-300 font-medium"
+                      className="text-sm text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300 font-medium"
                     >
                       Результаты
                     </a>
@@ -129,7 +147,7 @@ const Footer: React.FC = () => {
                     <a
                       href="#pricing"
                       onClick={(e) => { e.preventDefault(); scrollToSection('#pricing'); }}
-                      className="text-sm text-slate-700 hover:text-[#0D2C54] transition-colors duration-300 font-medium"
+                      className="text-sm text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300 font-medium"
                     >
                       Тарифы
                     </a>
@@ -138,7 +156,7 @@ const Footer: React.FC = () => {
                     <a
                       href="#faq"
                       onClick={(e) => { e.preventDefault(); scrollToSection('#faq'); }}
-                      className="text-sm text-slate-700 hover:text-[#0D2C54] transition-colors duration-300 font-medium"
+                      className="text-sm text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300 font-medium"
                     >
                       Вопросы и ответы
                     </a>
@@ -148,46 +166,46 @@ const Footer: React.FC = () => {
 
               {/* Company */}
               <div>
-                <h3 className="text-xs font-bold text-[#0D2C54] uppercase tracking-wider mb-5">
+                <h3 className="text-xs font-bold text-[#F48CA7] uppercase tracking-wider mb-5">
                   Компания
                 </h3>
                 <ul className="space-y-3">
                   <li>
                     <a 
-                      href="https://motor-mind.ru/about" 
-                      className="text-sm text-slate-700 hover:text-[#0D2C54] transition-colors duration-300 font-medium"
+                      href="https://beauty-mind.ru/about" 
+                      className="text-sm text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300 font-medium"
                     >
                       О нас
                     </a>
                   </li>
                   <li>
                     <a 
-                      href="mailto:hello@motor-mind.ru" 
-                      className="text-sm text-slate-700 hover:text-[#0D2C54] transition-colors duration-300 font-medium"
+                      href="mailto:hello@beauty-mind.ru" 
+                      className="text-sm text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300 font-medium"
                     >
                       Связаться
                     </a>
                   </li>
                   <li>
                     <a 
-                      href="https://motor-mind.ru/partner" 
-                      className="text-sm text-slate-700 hover:text-[#0D2C54] transition-colors duration-300 font-medium"
+                      href="https://beauty-mind.ru/partner" 
+                      className="text-sm text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300 font-medium"
                     >
                       Партнерская программа
                     </a>
                   </li>
                   <li>
                     <a 
-                      href="https://motor-mind.ru/privacy" 
-                      className="text-sm text-slate-700 hover:text-[#0D2C54] transition-colors duration-300 font-medium"
+                      href="https://beauty-mind.ru/privacy" 
+                      className="text-sm text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300 font-medium"
                     >
                       Конфиденциальность
                     </a>
                   </li>
                   <li>
                     <a 
-                      href="https://motor-mind.ru/license-agreement" 
-                      className="text-sm text-slate-700 hover:text-[#0D2C54] transition-colors duration-300 font-medium"
+                      href="https://beauty-mind.ru/license-agreement" 
+                      className="text-sm text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300 font-medium"
                     >
                       Публичная оферта
                     </a>
@@ -197,22 +215,22 @@ const Footer: React.FC = () => {
 
               {/* Resources - только реальные */}
               <div>
-                <h3 className="text-xs font-bold text-[#0D2C54] uppercase tracking-wider mb-5">
+                <h3 className="text-xs font-bold text-[#F48CA7] uppercase tracking-wider mb-5">
                   Ресурсы
                 </h3>
                 <ul className="space-y-3">
                   <li>
                     <a 
-                      href="https://motor-mind.ru/blog" 
-                      className="text-sm text-slate-700 hover:text-[#0D2C54] transition-colors duration-300 font-medium"
+                      href="https://beauty-mind.ru/blog" 
+                      className="text-sm text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300 font-medium"
                     >
                       Блог
                     </a>
                   </li>
                   <li>
                     <a 
-                      href="https://motor-mind.ru/status" 
-                      className="text-sm text-slate-700 hover:text-[#0D2C54] transition-colors duration-300 font-medium flex items-center gap-2"
+                      href="https://beauty-mind.ru/status" 
+                      className="text-sm text-[#6B5E58]/80 hover:text-[#F48CA7] transition-colors duration-300 font-medium flex items-center gap-2"
                     >
                       Статус сервиса
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
@@ -225,20 +243,20 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom section - более тонкий разделитель */}
-        <div className="mt-12 pt-6 border-t border-slate-100">
+        <div className="mt-12 pt-6 border-t border-[#F48CA7]/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             
             {/* Copyright with social */}
             <div className="flex items-center gap-6">
-              <p className="text-xs text-slate-500">
-                © {new Date().getFullYear()} Motor Mind. Все права защищены.
+              <p className="text-xs text-[#6B5E58]/60">
+                © {new Date().getFullYear()} Beauty Mind. Все права защищены.
               </p>
               
               {/* Исправленные иконки соцсетей */}
               <div className="flex items-center gap-3">
                 <a 
-                  href="https://t.me/motormind" 
-                  className="text-slate-400 hover:text-[#0D2C54] transition-colors duration-300"
+                  href="https://t.me/beautymind" 
+                  className="text-[#6B5E58]/50 hover:text-[#F48CA7] transition-colors duration-300"
                   aria-label="Telegram"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -247,7 +265,7 @@ const Footer: React.FC = () => {
                 </a>
                 <a 
                   href="https://wa.me/79991234567" 
-                  className="text-slate-400 hover:text-[#25D366] transition-colors duration-300"
+                  className="text-[#6B5E58]/50 hover:text-[#25D366] transition-colors duration-300"
                   aria-label="WhatsApp"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -261,17 +279,17 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-2">
               <div 
                 className="w-1.5 h-1.5 rounded-full"
-                style={{ backgroundColor: '#FFD100' }}
+                style={{ backgroundColor: '#F48CA7' }}
               />
-              <span className="text-xs text-slate-500 font-medium">
-                Сделано для автобизнеса с заботой
+              <span className="text-xs text-[#6B5E58]/60 font-medium">
+                Сделано для beauty-бизнеса с заботой
               </span>
             </div>
           </div>
           
           {/* Юридические реквизиты - в самый низ, мелко */}
-          <div className="mt-4 pt-3 border-t border-slate-50">
-            <p className="text-xs text-slate-400 text-center leading-relaxed">
+          <div className="mt-4 pt-3 border-t border-[#F48CA7]/10">
+            <p className="text-xs text-[#6B5E58]/40 text-center leading-relaxed">
               ИП Архипов Артём Сергеевич • ИНН: 235212599566 • ОГРНИП: 324237500196784
             </p>
           </div>
