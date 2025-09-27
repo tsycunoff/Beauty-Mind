@@ -38,42 +38,81 @@ const Pricing = ({ onConnectClick }) => {
 
   const plans = [
     {
-      name: 'Start',
-      description: 'Для быстрого старта и сбора отзывов салона.',
-      subtext: 'Все необходимое для работы с отзывами клиенток',
-      price: { monthly: 4290, yearly: 3190 },
-      originalPrice: { monthly: null, yearly: 4290 },
+      name: 'QR',
+      description: 'Для микросалонов и ИП.',
+      subtext: 'Быстрый старт с QR-опросами',
+      price: { monthly: 790, yearly: 590 },
+      originalPrice: { monthly: null, yearly: 790 },
       features: [
-        { text: 'Запрос отзывов через WhatsApp', included: true },
-        { text: 'Перехват негатива в чат', included: true },
-        { text: 'Ссылки на отзывы: Google / Яндекс / 2ГИС', included: true },
-        { text: 'Интеграция с Yclients / Altegio / DiKiDi', included: true },
-        { text: 'Настройка шаблонов для beauty-услуг', included: true },
-        { text: 'Базовая аналитика салона', included: true },
-        { text: 'Расширенная beauty-аналитика', included: false },
-        { text: 'Триггеры (маникюр, ДР, winback)', included: false },
+        { text: 'QR-опросы клиенток', included: true },
+        { text: 'Базовая страница отзывов', included: true },
+        { text: 'Простая настройка за 10 минут', included: true },
+        { text: 'Интеграция с CRM', included: false },
+        { text: 'Автозапросы обратной связи через WhatsApp', included: false },
+        { text: 'Перехват негатива в чат', included: false },
+        { text: 'Триггерные кампании', included: false },
+        { text: 'Расширенная аналитика', included: false },
       ],
       popular: false,
-      cta: 'Начать с Start'
+      cta: 'Начать с QR'
+    },
+    {
+      name: 'Start',
+      description: 'Для салонов 1–2 кресла.',
+      subtext: 'Полная автоматизация отзывов',
+      price: { monthly: 1990, yearly: 1490 },
+      originalPrice: { monthly: null, yearly: 1990 },
+      features: [
+        { text: 'QR-опросы клиенток', included: true },
+        { text: 'Автозапросы через WhatsApp', included: true },
+        { text: 'Перехват негатива в чат', included: true },
+        { text: 'Интеграция с CRM (1 система)', included: true },
+        { text: 'Ссылки на отзывы: Google / Яндекс / 2ГИС', included: true },
+        { text: 'Базовая аналитика салона', included: true },
+        { text: 'Триггерные кампании', included: false },
+        { text: 'Расширенная аналитика', included: false },
+      ],
+      popular: true,
+      cta: 'Выбрать Start'
     },
     {
       name: 'Pro',
-      description: 'Для максимального возврата клиенток.',
-      subtext: 'Полная автоматизация + возврат клиенток',
-      price: { monthly: 6490, yearly: 4890 },
-      originalPrice: { monthly: null, yearly: 6490 },
+      description: 'Для растущих точек и мини-сетей.',
+      subtext: 'Максимальный возврат клиенток',
+      price: { monthly: 3490, yearly: 2590 },
+      originalPrice: { monthly: null, yearly: 3490 },
       features: [
-        { text: 'Запрос отзывов через WhatsApp', included: true },
-        { text: 'Перехват негатива в чат', included: true },
-        { text: 'Ссылки на отзывы: Google / Яндекс / 2ГИС', included: true },
-        { text: 'Расширенная интеграция с beauty-CRM', included: true },
-        { text: 'Настройка шаблонов для beauty-услуг', included: true },
-        { text: 'Базовая аналитика салона', included: true },
+        { text: 'Всё из тарифа Start', included: true },
+        { text: 'Триггеры: no-show, ДР, win-back', included: true },
         { text: 'Расширенная beauty-аналитика', included: true },
-        { text: 'Триггеры (маникюр, коррекция, ДР, winback)', included: true },
+        { text: 'Уведомления о процедурах', included: true },
+        { text: 'Множественные интеграции CRM', included: true },
+        { text: 'Подтверждение записи клиенток', included: true },
+        { text: 'Персональные сценарии', included: true },
+        { text: 'NPS/CSAT опросы', included: false },
+        { text: 'AI-бот и приоритетная поддержка', included: false },
       ],
-      popular: true,
+      popular: false,
       cta: 'Выбрать Pro'
+    },
+    {
+      name: 'Max',
+      description: 'Для сетей и флагманских салонов.',
+      subtext: 'Корпоративное решение с AI',
+      price: { monthly: 5990, yearly: 4490 },
+      originalPrice: { monthly: null, yearly: 5990 },
+      features: [
+        { text: 'Всё из тарифа Pro', included: true },
+        { text: 'NPS/CSAT опросы клиенток', included: true },
+        { text: 'AI-бот для автоответов', included: true },
+        { text: 'AI-запись к конкретному мастеру на время', included: true },
+        { text: 'Подтверждение записи клиенток', included: true },
+        { text: 'Приоритетная поддержка 24/7', included: true },
+        { text: 'Корпоративная аналитика', included: true },
+        { text: 'Персональный менеджер', included: true },
+      ],
+      popular: false,
+      cta: 'Скоро'
     }
   ];
 
@@ -91,29 +130,37 @@ const Pricing = ({ onConnectClick }) => {
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-[#6B5E58] leading-tight">
             Прозрачные тарифы
             <span className="bg-gradient-to-r from-[#F48CA7] to-[#C5536C] bg-clip-text text-transparent">
-              {" "}без скрытых платежей
+              {" "}для любого салона
             </span>
           </h2>
           <p className="text-lg md:text-xl text-[#6B5E58]/70 mt-6 max-w-2xl mx-auto leading-relaxed">
-            Выберите план, который подходит вашему салону красоты.
+            От первых шагов до большой сети — выберите то, что подходит именно вам.
           </p>
           <p className="text-sm text-[#6B5E58]/70 mt-3">
-            Запуск за 24 часа
+            Запуск за 24 часа • Никаких подвохов
           </p>
+          
+          {/* Value positioning */}
+          <div className="inline-flex items-center gap-2 bg-[#F7D8E1]/50 border border-[#F48CA7]/20 rounded-full px-4 py-2 mt-4">
+            <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#F48CA7' }}></div>
+            <span className="text-sm font-semibold text-[#F48CA7]">
+              ПЛАТИТЕ ТОЛЬКО ЗА ТО, ЧТО РЕАЛЬНО ИСПОЛЬЗУЕТЕ
+            </span>
+          </div>
           
           {/* Value props */}
           <div className="flex flex-wrap justify-center gap-6 mt-6 text-sm text-[#6B5E58]/70">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#F48CA7' }}></div>
-              <span>Без долгосрочных договоров</span>
+              <span>Отменить можно в любой момент</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#F48CA7' }}></div>
-              <span>Персональный менеджер</span>
+              <span>Живая поддержка, не боты</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#F48CA7' }}></div>
-              <span>30 дней тестового периода</span>
+              <span>Попробуйте 14 дней бесплатно</span>
             </div>
           </div>
         </div>
@@ -150,46 +197,46 @@ const Pricing = ({ onConnectClick }) => {
           </div>
         </div>
 
-        {/* Pricing cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {/* Pricing cards - теперь 4 тарифа */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={plan.name}
-              className={`relative bg-white rounded-2xl p-6 lg:p-8 flex flex-col transition-all duration-700 transform hover:scale-[1.02] ${
+              className={`relative bg-white rounded-2xl p-6 flex flex-col transition-all duration-700 transform hover:scale-[1.02] ${
                 plan.popular 
-                ? 'border-2 shadow-2xl shadow-[#F48CA7]/10' 
+                ? 'border-2 shadow-2xl shadow-[#F48CA7]/10 md:scale-105' 
                 : 'border border-[#F48CA7]/20 shadow-lg hover:shadow-xl'
               } ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ 
-                transitionDelay: `${150 * (index + 1)}ms`,
+                transitionDelay: `${100 * (index + 1)}ms`,
                 borderColor: plan.popular ? '#F48CA7' : undefined
               }}
             >
               {/* Popular badge */}
               {plan.popular && (
                 <div 
-                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-2 rounded-full text-xs font-bold text-white shadow-lg"
+                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg"
                   style={{ backgroundColor: '#F48CA7' }}
                 >
-                  РЕКОМЕНДУЕМ
+                  ПОПУЛЯРНЫЙ
                 </div>
               )}
 
               {/* Plan header */}
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-extrabold text-[#6B5E58] mb-2">{plan.name}</h3>
-                <p className="text-[#6B5E58]/70 text-base mb-1">{plan.description}</p>
-                <p className="text-sm text-slate-500">{plan.subtext}</p>
+                <h3 className="text-xl font-extrabold text-[#6B5E58] mb-2">{plan.name}</h3>
+                <p className="text-[#6B5E58]/70 text-sm mb-1">{plan.description}</p>
+                <p className="text-xs text-slate-500">{plan.subtext}</p>
               </div>
               
               {/* Pricing */}
               <div className="text-center mb-6">
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-4xl font-extrabold text-[#6B5E58]">
+                  <span className="text-3xl font-extrabold text-[#6B5E58]">
                     {plan.price[billingCycle].toLocaleString()}
                   </span>
-                  <span className="text-lg text-[#6B5E58]/70">₽</span>
-                  <span className="text-[#6B5E58]/70">/мес.</span>
+                  <span className="text-sm text-[#6B5E58]/70">₽</span>
+                  <span className="text-[#6B5E58]/70 text-sm">/мес.</span>
                 </div>
                 
                 {billingCycle === 'yearly' && plan.originalPrice.yearly && (
@@ -197,21 +244,15 @@ const Pricing = ({ onConnectClick }) => {
                     <span className="text-sm text-slate-400 line-through">
                       {plan.originalPrice.yearly.toLocaleString()}₽/мес.
                     </span>
-                    <span className="ml-2 text-sm font-semibold" style={{ color: '#F48CA7' }}>
+                    <span className="ml-2 text-xs font-semibold" style={{ color: '#F48CA7' }}>
                       Экономия {((plan.originalPrice.yearly - plan.price.yearly) * 12).toLocaleString()}₽/год
                     </span>
                   </div>
                 )}
-                
-                {billingCycle === 'yearly' && (
-                  <p className="text-sm text-[#6B5E58]/70 mt-2">
-                    При оплате за год • {(plan.price.yearly * 12).toLocaleString()}₽
-                  </p>
-                )}
               </div>
 
               {/* Features */}
-              <ul className="space-y-3 text-sm mb-8 flex-grow">
+              <ul className="space-y-2.5 text-sm mb-8 flex-grow">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
                     {feature.included ? <Check /> : <XMark />}
@@ -226,25 +267,22 @@ const Pricing = ({ onConnectClick }) => {
 
               {/* CTA Button */}
               <button
-                onClick={onConnectClick}
-                className={`w-full py-4 px-6 rounded-xl text-base font-bold transition-all duration-300 transform hover:scale-[1.02] focus:scale-[1.02] shadow-lg ${
-                  plan.popular 
+                onClick={plan.name === 'Max' ? undefined : onConnectClick}
+                disabled={plan.name === 'Max'}
+                className={`w-full py-3 px-4 rounded-xl text-sm font-bold transition-all duration-300 transform hover:scale-[1.02] focus:scale-[1.02] shadow-lg ${
+                  plan.name === 'Max'
+                  ? 'bg-slate-100 text-slate-500 cursor-not-allowed border border-slate-200'
+                  : plan.popular 
                   ? 'text-white hover:shadow-xl active:scale-[0.98]' 
                   : 'bg-slate-50 text-[#6B5E58] hover:bg-[#F7D8E1]/30 border border-[#F48CA7]/20 hover:border-[#F48CA7]/40'
                 }`}
-                style={plan.popular ? { 
+                style={plan.popular && plan.name !== 'Max' ? { 
                   backgroundColor: '#F48CA7',
                   boxShadow: '0 8px 25px rgba(244, 140, 167, 0.4)'
                 } : undefined}
               >
                 {plan.cta}
               </button>
-              
-              {plan.popular && (
-                <p className="text-center text-xs text-[#6B5E58]/70 mt-3">
-                  Запуск за 24 часа • Поддержка 24/7
-                </p>
-              )}
             </div>
           ))}
         </div>
@@ -252,19 +290,19 @@ const Pricing = ({ onConnectClick }) => {
         {/* Bottom CTA */}
         <div className="text-center mt-12">
           <p className="text-[#6B5E58]/70 mb-4">
-            Не уверены какой план выбрать? 
+            Не знаете, что выбрать? 
             <button 
               onClick={onConnectClick}
               className="ml-1 font-semibold text-[#F48CA7] hover:underline"
             >
-              Получите бесплатную консультацию
+              Поговорим 15 минут — поможем разобраться
             </button>
           </p>
           
           <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
-            <span>✓ Помощь в выборе тарифа</span>
-            <span>✓ Демонстрация возможностей</span>
-            <span>✓ Расчет ROI для вашего салона</span>
+            <span>✓ Покажем, как это работает</span>
+            <span>✓ Посчитаем выгоду для вашего салона</span>
+            <span>✓ Подберем идеальный тариф</span>
           </div>
         </div>
       </div>
