@@ -91,10 +91,22 @@ const Header: React.FC<{ onConnectClick: () => void }> = ({ onConnectClick }) =>
             </button>
              <button
               onClick={onConnectClick}
-              className="inline-flex items-center justify-center rounded-lg text-sm font-bold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-6 shadow-lg group"
+              className="inline-flex items-center justify-center rounded-lg text-sm font-bold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-6 shadow-lg group border-b-4 active:border-b-0 active:translate-y-1"
               style={{ 
-                backgroundColor: '#f3db9c',
-                color: '#fba4ba'
+                backgroundColor: '#F48CA7',
+                color: 'white',
+                borderBottomColor: '#C5536C',
+                boxShadow: '0 4px 12px rgba(244, 140, 167, 0.3)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#E06B89';
+                e.currentTarget.style.transform = 'translateY(-1px)';
+                e.currentTarget.style.boxShadow = '0 6px 16px rgba(244, 140, 167, 0.4)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#F48CA7';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(244, 140, 167, 0.3)';
               }}
             >
               <span>Запустить за 24 часа</span>
@@ -164,10 +176,11 @@ const Header: React.FC<{ onConnectClick: () => void }> = ({ onConnectClick }) =>
               <div className="grid gap-3">
                 <button
                   onClick={onConnectClick}
-                  className="inline-flex items-center justify-center rounded-lg text-base font-bold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-6 shadow-lg group w-full"
+                  className="inline-flex items-center justify-center rounded-lg text-base font-bold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 px-6 shadow-lg group w-full border-b-4 active:border-b-0 active:translate-y-1"
                   style={{ 
-                    backgroundColor: '#f3db9c',
-                    color: '#fba4ba'
+                    backgroundColor: '#F48CA7',
+                    color: 'white',
+                    borderBottomColor: '#C5536C'
                   }}
                 >
                   <span>Запустить Beauty Mind</span>
